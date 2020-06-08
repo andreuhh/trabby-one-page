@@ -1,0 +1,160 @@
+/*
+CSS FOR TRABBY
+MOHOLE Exercise by Francesco Riggio
+*/
+
+/* Import my chosen GFonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin');
+
+
+/* My palette*/
+:root {
+    --main-color-txt: rgba(4, 4, 4, 1);
+    --main-bg-header: rgba(34, 46, 80, 0.4);
+    --color2: rgba(0, 121, 145, 1);
+    --color3: rgba(67, 154, 134, 1);
+    --color4: rgba(188, 216, 193, 1);
+    --color5: rgba(233, 217, 133, 1);
+  }
+
+/* N.B.: non faccio reset qui, in quanto carico nel html il file normalize.css per il reset */
+/* NON USO GRID AREAS, AVENDO UNA STRUTTURA A SECTION SENZA SIDEBAR
+è sufficiente l'incolonnamento di default (block) per Header, Main e Footer, e al loro interno ho diverse soluzioni
+a due, tre o una colonna, grid e flex.
+*/
+
+/* Miei istruzioni principali */
+body{
+    font-size: 20px;
+    color: var(--main-color-txt);
+    font-family: 'Cabin', sans-serif;
+}
+
+h1,h2,h3,h4{
+    font-weight: 700;
+}
+p{
+font-size: 1rem;
+}
+li{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* classi fast per impostare istruzioni, flex, grid o altre */
+.flex{display: flex;}
+.flex-column{flex-direction: column;}
+.grid{display: grid;}
+.full-height{
+    min-height: 100vh;
+    height: 100%;
+}
+.myp-0_5{padding: .5rem;}
+.myp-1{padding: 1rem;}
+.myp-1_5{padding: 1.5rem;}
+
+/* fine classi fast*/
+
+.logo img {
+    width: 80px;
+    height: 70px;
+}
+
+header {
+    background-color: var(--main-bg-header);
+    color: var(--color5);
+    grid-template-rows: 1fr 4fr 1fr; /* crea struttura 3 fasce logo+nav+cta con immagine di sfondo*/
+}
+
+header .top{
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    background-color: rgba(34, 46, 80, 0.4);
+}
+
+ul {
+    justify-content: space-around;
+}
+
+.hero {
+    background: url(img/trabby_hero.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color5);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .875rem;
+}
+
+nav li {
+    min-width: 60px;
+}
+
+.cta {
+    justify-content: center;
+    align-items: center;
+}
+
+.cta .button{
+    padding: 1.2rem 1.7rem;
+    background-color: var(--color2);
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.cta a{
+    text-decoration: none;
+    color: var(--main-color-txt);
+    text-transform: uppercase;
+}
+
+.cta .button:hover{
+    background-color: var(--color4);
+    color: var(--main-color-txt);
+}
+
+.social-brands {
+    justify-content: flex-end;
+    margin-right: 9rem;
+    font-size: 2rem;
+}
+
+.social-brands li{
+    padding: 10px;
+}
+
+
+
+section {
+   padding: 20px 10px 20px; 
+}
+
+section.slogan {
+    background-color: var(--color5);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+section.slogan p{font-size: 1.8rem;}
+
+.services.col-3{
+    color: #ffffff;
+    row-gap: 1rem;
+}
+
+.services article{
+    background-color: var(--color2);
+}
+
+.card-title{text-align: center;}
+.card-body p{padding: 0 2rem;}
